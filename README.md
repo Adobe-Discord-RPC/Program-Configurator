@@ -1,5 +1,6 @@
 # Adobe Discord RPC Program Configurator
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/37e8289e26e64bb48c8cda1767ae5146)](https://app.codacy.com/gh/Adobe-Discord-RPC/Program-Configurator?utm_source=github.com&utm_medium=referral&utm_content=Adobe-Discord-RPC/Program-Configurator&utm_campaign=Badge_Grade_Settings)
 [![Title Image](https://adobe-discord-rpc.github.io/Adobe-Discord-RPC-Image/images/cover.png)](https://github.com/Adobe-Discord-RPC)
 
 [![Facebook Badge](https://img.shields.io/badge/Follow-Facebook-4267B2?style=for-the-badge)](https://www.facebook.com/adobediscordrpc) [![Twitter Badge](https://img.shields.io/badge/Follow-Twitter-1DA1F2?style=for-the-badge)](https://twitter.com/adobediscordrpc) [![Homepage Badge](https://img.shields.io/badge/Homepage-Click-7289DA?style=for-the-badge)](https://adoberpc.hwahyang.space)
