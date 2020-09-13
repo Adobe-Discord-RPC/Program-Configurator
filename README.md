@@ -6,7 +6,7 @@
 
 ![GitHub](https://img.shields.io/github/license/Adobe-Discord-RPC/Program-Configurator?style=for-the-badge) ![GitHub issues](https://img.shields.io/github/issues/Adobe-Discord-RPC/Program-Configurator?style=for-the-badge) ![GitHub pull requests](https://img.shields.io/github/issues-pr-raw/Adobe-Discord-RPC/Program-Configurator?style=for-the-badge)
 
-![GitHub last commit](https://img.shields.io/github/last-commit/Adobe-Discord-RPC/Program-Configurator?style=for-the-badge) <!--![Codacy grade](https://img.shields.io/codacy/grade/e46595839ccd4a72b296a417e4bcf1dd?style=for-the-badge)-->
+![GitHub last commit](https://img.shields.io/github/last-commit/Adobe-Discord-RPC/Program-Configurator?style=for-the-badge) ![Codacy grade](https://img.shields.io/codacy/grade/542b90c8ed7b448e83bfc96af519d5ed?style=for-the-badge)
 
 ## Ko
 
