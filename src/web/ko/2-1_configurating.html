@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+    <head>
+        <meta charset="UTF-8">
+        <title>프로그램 설정 - Adobe Discord RPC Configurator</title>
+        <!-- Google Icon Font -->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> <!-- TODO -->
+        <!-- main.css -->
+        <link type="text/css" rel="stylesheet" href="./../materialize.min.css"  media="screen,projection"/>
+        <!-- Drag Block -->
+        <style>
+            body {
+                -ms-user-select: none;
+                -moz-user-select: -moz-none;
+                -khtml-user-select: none;
+                -webkit-user-select: none;
+                user-select: none;
+            }
+        </style>
+        <!-- Insert this line above script imports -->
+        <script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
+        <script type="text/javascript" src="./../jquery-2.1.1.min.js"></script>
+        <script type="text/javascript" src="./../materialize.min.js"></script>
+        <script type="text/javascript" src="./../duplicate.js"></script>
+        <script type="text/javascript" src="./../2-1_configurating.js"></script>
+        <!-- Insert this line after script imports -->
+        <script>if (window.module) module = window.module;</script>
+    </head>
+
+    <body class="indigo lighten-4">
+        <!-- Main div S -->
+        <div class="container" id="loading" style="display: block;">
+            <div class="row">
+                <div style="position:absolute; top:50%; left:50%; transform:translate(-50%, -50%)">
+                    <div class="col s3"></div>
+                    <div class="col s12">
+                        <div class="card horizontal">
+                            <div class="card-stacked">
+                                <div class="card-content">
+                                    <!--<h4 style="text-align: center;">잠시만 기다려 주세요...</h4>-->
+                                    <br />
+                                    <center><div class="preloader-wrapper big active"><div class="spinner-layer spinner-blue"><div class="circle-clipper left"><div class="circle"></div></div><div class="gap-patch"><div class="circle"></div></div><div class="circle-clipper right"><div class="circle"></div></div></div><div class="spinner-layer spinner-red"><div class="circle-clipper left"><div class="circle"></div></div><div class="gap-patch"><div class="circle"></div></div><div class="circle-clipper right"><div class="circle"></div></div></div><div class="spinner-layer spinner-yellow"><div class="circle-clipper left"><div class="circle"></div></div><div class="gap-patch"><div class="circle"></div></div><div class="circle-clipper right"><div class="circle"></div></div></div><div class="spinner-layer spinner-green"><div class="circle-clipper left"><div class="circle"></div></div><div class="gap-patch"><div class="circle"></div></div><div class="circle-clipper right"><div class="circle"></div></div></div></div></center>
+                                    <p style="text-align: center;" id="loading_description1">
+                                        <br />
+                                        데이터를 불러오고 있습니다.<br />
+                                        이 창이 오래 지속되면 <a href="javascript:void(0);" onClick="openLink('https://discord.gg/7MBYbERafX', false);">공식 서버</a>를 찾아주세요.
+                                        <br />
+                                    </p>
+                                    <p style="text-align: center; display: none;" id="loading_description2">
+                                        <br />
+                                        요청하신 내용을 처리하고 있습니다.<br />
+                                        프로그램을 종료하거나, 컴퓨터를 절전모드로 전환하지 마세요.<br /><br />
+                                        이 창이 오래 지속되면 <a href="javascript:void(0);" onClick="openLink('https://discord.gg/7MBYbERafX', false);">공식 서버</a>를 찾아주세요.
+                                        <br />
+                                    </p>
+                                    <p style="text-align: center; display: none;" id="loading_description3_1">
+                                        <br />
+                                        요청하신 내용을 처리하지 못했습니다.<br />
+                                        이 현상이 지속되면 <a href="javascript:void(0);" onClick="openLink('https://discord.gg/7MBYbERafX', false);">공식 서버</a>를 찾아주세요.<br /><br />
+                                        5초 후 설정 프로그램이 종료됩니다.
+                                        <br />
+                                    </p>
+                                    <p style="text-align: center; display: none;" id="loading_description3_2">
+                                        <br />
+                                        요청하신 내용을 성공적으로 처리했습니다.<br />
+                                        5초 후 설정 프로그램이 재실행 됩니다.<br />
+                                        (경우에 따라 코어 프로그램도 재실행 됩니다.)
+                                        <br />
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container" id="main" style="display: none;">
+            <div class="row">
+                <div style="position:absolute; top:50%; left:50%; transform:translate(-50%, -50%)">
+                    <div class="col s3"></div>
+                    <div class="col s12">
+                        <div class="card horizontal">
+                            <div class="card-stacked">
+                                <div class="card-content">
+                                    <h4 style="text-align: center;">프로그램 설정</h4>
+                                    <p style="text-align: center;">원하는 항목을 수정하신 후, 저장 해 주세요.</p>
+                                    <br />
+                                    <div class="row">
+                                        <div class="col s12">
+                                            <div class="input-field col s4">
+                                                <input placeholder="1~65535" id="port1" type="text" class="validate" value="0" disabled>
+                                                <label for="port1">외부 통신 포트</label>
+                                            </div>
+                                            <div class="input-field col s4">
+                                                <input placeholder="1~65535" id="port2" type="text" class="validate" value="0" disabled>
+                                                <label for="port2">내부 통신 포트</label>
+                                            </div>
+                                            <div class="col s4">
+                                                <a style="margin-top: 13px;" class="btn waves-effect waves-light tooltipped" href="javascript:void(0);" onclick="getPorts();" data-position="top" data-tooltip="무작위로 포트를 생성합니다.">무작위 생성 <!-- 무작위 5개 주고 택1 -->
+                                                    <i class="material-icons right">autorenew</i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="col s12">
+                                            <div class="input-field col s4">
+                                                <select id="Mode" onchange="onModeChange(this);">
+                                                    <option value="Nul" selected disabled>-- 선택하세요 --</option>
+                                                    <option value="Pub">일반</option>
+                                                    <option value="Dev">개발</option>
+                                                </select>
+                                                <label for="Mode">실행 모드 선택</label>
+                                            </div>
+                                            <div class="input-field col s4">
+                                                <input placeholder="15000" id="processNF" type="number" class="validate" value="5000" min="1" max="90301000">
+                                                <label for="processNF">실행 확인 주기(ms)</label>
+                                            </div>
+                                            <div class="input-field col s4">
+                                                <input placeholder="10000" id="updateRPC" type="number" class="validate" value="5000" min="1" max="90301000">
+                                                <label for="updateRPC">RPC 갱신 주기(ms)</label>
+                                            </div>
+                                        </div>
+
+                                        <div class="col s12"><p id="NOTICE" style="text-align: center;">※ RPC 커스텀은 추후 개발 예정입니다!</p><br /></div>
+
+                                        <div class="col s12">
+                                            <div class="col s4"></div>
+                                            <div class="col s4">
+                                                <a class="waves-effect waves-light btn red tooltipped" href="javascript:void(0);" onClick="getLogs();" data-position="bottom" data-tooltip="프로그램의 로그를 지우실 수 있습니다."><i class="material-icons left">delete</i>로그 지우기</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-action">
+                                    <a class="btn waves-effect waves-teal btn-flat red-text white left modal-trigger tooltipped" data-position="top" data-tooltip="변경사항을 저장하지 않고 종료합니다." href="#exit_q" data-target="exit_q">종료</a>
+                                    <a class="btn waves-effect waves-teal btn-flat blue-text white right tooltipped" data-position="top" data-tooltip="변경사항을 저장하고 돌아갑니다." href="javascript:void(0);" onClick="applySetting();">저장하고 돌아가기 ></a>
+                                    <a class="btn waves-effect waves-teal btn-flat orange-text white right tooltipped" data-position="top" data-tooltip="변경사항을 저장하지 않고 돌아갑니다." href="1_select.html">취소하고 돌아가기 ></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Main div E -->
+
+        <!-- Modal Structure S -->
+        <div id="randomPick" class="modal">
+            <div class="modal-content" id="randomPick_Loading">
+                <br />
+                <center><div class="preloader-wrapper big active" id="spinner"><div class="spinner-layer spinner-blue"><div class="circle-clipper left"><div class="circle"></div></div><div class="gap-patch"><div class="circle"></div></div><div class="circle-clipper right"><div class="circle"></div></div></div><div class="spinner-layer spinner-red"><div class="circle-clipper left"><div class="circle"></div></div><div class="gap-patch"><div class="circle"></div></div><div class="circle-clipper right"><div class="circle"></div></div></div><div class="spinner-layer spinner-yellow"><div class="circle-clipper left"><div class="circle"></div></div><div class="gap-patch"><div class="circle"></div></div><div class="circle-clipper right"><div class="circle"></div></div></div><div class="spinner-layer spinner-green"><div class="circle-clipper left"><div class="circle"></div></div><div class="gap-patch"><div class="circle"></div></div><div class="circle-clipper right"><div class="circle"></div></div></div></div></center>
+                <p style="text-align: center;">
+                    <br />
+                    요청하신 내용을 처리하는 중 입니다.<br />
+                    이 창이 오래 지속되면 <a href="javascript:void(0);" onClick="openLink('https://discord.gg/7MBYbERafX', false);">공식 서버</a>를 찾아주세요.
+                </p>
+            </div>
+            <div class="modal-content" id="randomPick_Main" style="display: none;">
+                <h4>포트 무작위 생성</h4>
+                <p>어떤 포트를 사용할까요?</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>외부 통신 포트</th>
+                            <th>내부 통신 포트</th>
+                            <th>상태</th>
+                            <th>선택</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr id="randomPick_Table0">
+                            <td style="word-break: keep-all;">SAMPLE</td>
+                            <td style="word-break: keep-all;">26851</td>
+                            <td style="word-break: keep-all;">26851</td>
+                            <td style="word-break: keep-all;" class="red-text">포트 사용 중</td>
+                            <td><a class="waves-effect waves-light btn-small tooltipped grey" data-position="top" data-tooltip="사용할 수 없는 포트입니다."><i class="material-icons left">close</i> 사용불가</a></td>
+                        </tr>
+                        <tr id="randomPick_Table1">
+                            <td style="word-break: keep-all;">SAMPLE</td>
+                            <td style="word-break: keep-all;">4865</td>
+                            <td style="word-break: keep-all;">4865</td>
+                            <td style="word-break: keep-all;" class="green-text">포트 사용 가능</td>
+                            <td><a class="waves-effect waves-light btn-small tooltipped" data-position="top" data-tooltip="클릭하여 통신용 포트를 변경합니다."><i class="material-icons left">check</i> 사용하기</a></td>
+                        </tr>
+                        <tr id="randomPick_Table2">
+                            <td style="word-break: keep-all;">SAMPLE</td>
+                            <td style="word-break: keep-all;">34658</td>
+                            <td style="word-break: keep-all;">34658</td>
+                            <td style="word-break: keep-all;" class="green-text">포트 사용 가능</td>
+                            <td><a class="waves-effect waves-light btn-small tooltipped" data-position="top" data-tooltip="클릭하여 통신용 포트를 변경합니다."><i class="material-icons left">check</i> 사용하기</a></td>
+                        </tr>
+                        <tr id="randomPick_Table3">
+                            <td style="word-break: keep-all;">SAMPLE</td>
+                            <td style="word-break: keep-all;">44576</td>
+                            <td style="word-break: keep-all;">44576</td>
+                            <td style="word-break: keep-all;" class="green-text">포트 사용 가능</td>
+                            <td><a class="waves-effect waves-light btn-small tooltipped" data-position="top" data-tooltip="클릭하여 통신용 포트를 변경합니다."><i class="material-icons left">check</i> 사용하기</a></td>
+                        </tr>
+                        <tr id="randomPick_Table4">
+                            <td style="word-break: keep-all;">SAMPLE</td>
+                            <td style="word-break: keep-all;">14387</td>
+                            <td style="word-break: keep-all;">14387</td>
+                            <td style="word-break: keep-all;" class="green-text">포트 사용 가능</td>
+                            <td><a class="waves-effect waves-light btn-small tooltipped" data-position="top" data-tooltip="클릭하여 통신용 포트를 변경합니다."><i class="material-icons left">check</i> 사용하기</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <a href="javascript:void(0);" class="modal-close waves-effect waves-green btn-flat cyan-text tooltipped" data-position="top" data-tooltip="포트를 변경하지 않고 돌아갑니다." id="randomPick_Close">화면으로 돌아가기</a>
+            </div>
+        </div>
+
+        <div id="deleteLog_Select" class="modal">
+            <div class="modal-content" id="deleteLog_Select_Loading">
+                <br />
+                <center><div class="preloader-wrapper big active"><div class="spinner-layer spinner-blue"><div class="circle-clipper left"><div class="circle"></div></div><div class="gap-patch"><div class="circle"></div></div><div class="circle-clipper right"><div class="circle"></div></div></div><div class="spinner-layer spinner-red"><div class="circle-clipper left"><div class="circle"></div></div><div class="gap-patch"><div class="circle"></div></div><div class="circle-clipper right"><div class="circle"></div></div></div><div class="spinner-layer spinner-yellow"><div class="circle-clipper left"><div class="circle"></div></div><div class="gap-patch"><div class="circle"></div></div><div class="circle-clipper right"><div class="circle"></div></div></div><div class="spinner-layer spinner-green"><div class="circle-clipper left"><div class="circle"></div></div><div class="gap-patch"><div class="circle"></div></div><div class="circle-clipper right"><div class="circle"></div></div></div></div></center>
+                <p style="text-align: center;">
+                    <br />
+                    요청하신 내용을 처리하는 중 입니다.<br />
+                    이 창이 오래 지속되면 <a href="javascript:void(0);" onClick="openLink('https://discord.gg/7MBYbERafX', false);">공식 서버</a>를 찾아주세요.
+                </p>
+            </div>
+            <div class="modal-content" id="deleteLog_Select_Main" style="display: none;">
+                <h4>로그 지우기</h4>
+                <p>어떤 로그를 지울까요?</p>
+                <p class="red-text"><b>
+                    ※ 삭제한 로그는 되돌릴 수 없으며, 삭제 직후 설정 프로그램이 재실행 됩니다.<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;(코어 프로그램 또한 재실행 됩니다.)<br />
+                    ※ 변경 사항은 자동으로 저장되지 않으니, 변경 사항을 먼저 저장 해 주세요.
+                </b></p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>선택</th>
+                            <th>파일명</th>
+                            <th>설명</th>
+                            <th>크기</th>
+                        </tr>
+                    </thead>
+                    <tbody id="deleteLog_Select_Lists">
+                        <tr>
+                            <td><label>&nbsp;&nbsp;<input type="checkbox" class="check" href="javascript:void(0);" /><span></span></label></td>
+                            <td style="word-break: keep-all;">TEST</td>
+                            <td style="word-break: keep-all;">무려 놀랍게도 테스트 데이터입니다!</td>
+                            <td class="red-text" style="word-break: keep-all;">이게 떴다면 문제가 있음</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <br />
+                <p class="orange-text">
+                    ※ 설정 파일을 수동으로 수정하신 경우, 이곳에 나열되지 않은 로그파일이 있을 수 있습니다.<br />
+                    ※ 이곳에 나열되지 않은 로그파일은 수동으로 제거하셔야 합니다.
+                </p>
+            </div>
+            <div class="modal-footer">
+                <a href="javascript:void(0);" onClick="deleteConfirm();" class="waves-effect waves-green btn-flat red-text" id="deleteLog_Confirm" disabled="true">선택한 로그 지우기</a>
+                <a href="javascript:void(0);" class="modal-close waves-effect waves-green btn-flat cyan-text">화면으로 돌아가기</a>
+            </div>
+        </div>
+
+        <div id="customErr" class="modal">
+            <div class="modal-content">
+                <h4>에러!</h4>
+                <p id="customErr_description">제공된 입력값이 없습니다!<br />잘못된 접근이거나, 연결되는 링크가 없을 수도 있습니다.</p>
+                <p>필요하실 경우, <a href="javascript:void(0);" onClick="openLink('https://discord.gg/7MBYbERafX', false);">공식 서버</a>를 찾아주세요.</p>
+            </div>
+            <div class="modal-footer">
+                <a class="btn modal-close waves-effect waves-teal btn-flat blue-text white right modal-trigger" href="javascript:void(0);">
+                    닫기
+                </a>
+            </div>
+        </div>
+
+        <div id="linkOpened" class="modal">
+            <div class="modal-content">
+                <h4>브라우저를 확인하세요!</h4>
+                <p>기본 브라우저로 링크가 열렸습니다.</p>
+                <p style="word-break: keep-all;">브라우저가 열리지 않았다면, <a id="linkOpenHref" href="javascript:void(0);" onClick="openLink('undefined');">여기</a>를 클릭하시거나 아래의 링크를 복사하세요.</p>
+                <p>필요하실 경우, <a href="javascript:void(0);" onClick="openLink('https://discord.gg/7MBYbERafX', false);">공식 서버</a>를 찾아주세요.</p>
+                <p class="tooltipped" data-position="bottom" data-tooltip="Ctrl + C를 눌러 복사할 수 있습니다."><input id="linkOpenURL" value="에러: 잘못된 접근이거나, 연결되는 링크가 없을 수도 있습니다." type="text" class="validate" readonly></p>
+            </div>
+            <div class="modal-footer">
+                <a class="btn modal-close waves-effect waves-teal btn-flat blue-text white right modal-trigger" href="javascript:void(0);">
+                    닫기
+                </a>
+            </div>
+        </div>
+
+        <div id="linkNF" class="modal">
+            <div class="modal-content">
+                <h4>에러!</h4>
+                <p>제공된 입력값이 없습니다!<br />잘못된 접근이거나, 연결되는 링크가 없을 수도 있습니다.</p>
+                <p>필요하실 경우, <a href="javascript:void(0);" onClick="openLink('https://discord.gg/7MBYbERafX', false);">공식 서버</a>를 찾아주세요.</p>
+            </div>
+            <div class="modal-footer">
+                <a class="btn modal-close waves-effect waves-teal btn-flat blue-text white right modal-trigger" href="javascript:void(0);">
+                    닫기
+                </a>
+            </div>
+        </div>
+
+        <div id="exit_q" class="modal">
+            <div class="modal-content" id="cannot_exit_t">
+                <h4>알림!</h4>
+                <p>현재 창에서는 프로그램 종료를 하실 수 없습니다.</p>
+                <p>필요하실 경우, <a href="javascript:void(0);" onClick="openLink('https://discord.gg/7MBYbERafX', false);">공식 서버</a>를 찾아주세요.</p>
+            </div>
+            <div class="modal-footer" id="cannot_exit_b">
+                <a class="btn modal-close waves-effect waves-teal btn-flat blue-text white right modal-trigger" href="javascript:void(0);">
+                    닫기
+                </a>
+            </div>
+
+            <div class="modal-content" style="display: none;" id="exit_t">
+                <h4>확인</h4>
+                <p>Adobe Discord RPC Configurator를 종료할까요?</p>
+            </div>
+            <div class="modal-footer" style="display: none;" id="exit_b">
+                <a href="javascript:void(0);" class="waves-effect waves-green btn-flat red-text" onclick="closeWindow()">프로그램 종료</a>
+                <a href="javascript:void(0);" class="modal-close waves-effect waves-green btn-flat cyan-text">화면으로 돌아가기</a>
+            </div>
+        </div>
+        <!-- Modal Structure E -->
+
+    </body>
+</html>

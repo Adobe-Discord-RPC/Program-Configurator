@@ -2,7 +2,7 @@
 
 [![Title Image](https://adobe-discord-rpc.github.io/Adobe-Discord-RPC-Image/images/cover.png)](https://github.com/Adobe-Discord-RPC)
 
-[![Discord Badge](https://img.shields.io/badge/Join-DIscord-7289DA?style=for-the-badge)](https://discord.gg/7MBYbERafX) [![Homepage Badge](https://img.shields.io/badge/Homepage-Click-7289DA?style=for-the-badge)](https://adoberpc.hwahyang.space)
+[![Discord Badge](https://img.shields.io/badge/Join-DIscord-7289DA?style=for-the-badge)](https://discord.gg/7MBYbERafX) [![Homepage Badge](https://img.shields.io/badge/Homepage-Click-7289DA?style=for-the-badge)](https://adobe.discordrpc.org)
 
 [![Facebook Badge](https://img.shields.io/badge/Follow-Facebook-4267B2?style=for-the-badge)](https://www.facebook.com/adobediscordrpc) [![Twitter Badge](https://img.shields.io/badge/Follow-Twitter-1DA1F2?style=for-the-badge)](https://twitter.com/adobediscordrpc)
 
@@ -12,16 +12,28 @@
 
 ## Ko
 
-Adobe Discord RPC 설정 프로그램 레포지토리입니다.
+Adobe Discord RPC 프로그램 설정, 업데이트, 제거 프로그램 레포지토리 입니다.
 
-프로그램 코어 v4.0부터는 프로그램 업데이트, 제거, 설정의 기능이 모두 Configurator로 통합됩니다.
+설치 방법은 [홈페이지](https://adobe.discordrpc.org)를 참고 해 주세요.
 
-설치 방법은 [홈페이지](https://adoberpc.hwahyang.space)를 참고 해 주세요.
+---
+
+개발 : [화향](https://hwahyang.space), [틸토](https://tilto.kro.kr)
+
+웹 디자인 : [화향](https://hwahyang.space) (템플릿 : [Materialize](https://materializecss.com/))
+
+UI 디자인 : [화향](https://hwahyang.space), [틸토](https://tilto.kro.kr)
 
 ## En
 
-This is the Repository of the Adobe Discord RPC Configurator Program. 
+This is the Repository of the Adobe Discord RPC Program Settings, Updates, and Uninstallers.
 
-Starting with Program Core v4.0, program updates, uninstallations, and settings are all integrated into Configurator.
+Please refer to the [homepage](https://adobe.discordrpc.org) for installation instructions.
 
-Please refer to the [homepage](https://adoberpc.hwahyang.space) for installation instructions.
+---
+
+Develop by. [HwaHyang](https://hwahyang.space), [Tilto](https://tilto.kro.kr)
+
+Web Design by. [HwaHyang](https://hwahyang.space) (Template : [Materialize](https://materializecss.com/))
+
+UI Design by. [HwaHyang](https://hwahyang.space), [Tilto](https://tilto.kro.kr)

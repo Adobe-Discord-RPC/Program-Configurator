@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+    <head>
+        <meta charset="UTF-8">
+        <title>업데이트 완료 - Adobe Discord RPC Updater</title>
+        <!-- Google Icon Font
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">-->
+        <!-- main.css -->
+        <link type="text/css" rel="stylesheet" href="./../materialize.min.css"  media="screen,projection"/>
+        <!-- Drag Block -->
+        <style>
+            body {
+                -ms-user-select: none;
+                -moz-user-select: -moz-none;
+                -khtml-user-select: none;
+                -webkit-user-select: none;
+                user-select: none;
+            }
+        </style>
+        <!-- Insert this line above script imports -->
+        <script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
+        <script type="text/javascript" src="./../jquery-2.1.1.min.js"></script>
+        <script type="text/javascript" src="./../materialize.min.js"></script>
+        <script type="text/javascript" src="./../duplicate.js"></script>
+        <script type="text/javascript" src="./../3-4_updated.js"></script>
+        <!-- Insert this line after script imports -->
+        <script>if (window.module) module = window.module;</script>
+    </head>
+
+    <body class="indigo lighten-4">
+        <!-- Main div S -->
+        <div class="container">
+            <div class="row">
+                <div style="position:absolute; top:50%; left:50%; transform:translate(-50%, -50%)">
+                    <div class="col s3"></div>
+                    <div class="col s12">
+                        <div class="card horizontal">
+                            <div class="card-stacked">
+                                <div class="card-tabs">
+                                    <ul class="tabs tabs-fixed-width">
+                                        <li class="tab"><a class="grey-text" aria-disabled="true">업데이트 확인</a></li>
+                                        <li class="tab"><a class="grey-text" aria-disabled="true">업데이트 안내</a></li>
+                                        <li class="tab"><a class="grey-text " aria-disabled="true">업데이트 진행</a></li>
+                                        <li class="tab"><a class="pink-text" aria-disabled="true">업데이트 완료</a></li>
+                                    </ul>
+                                </div>
+                                <div class="card-content">
+                                    <h4 id="title" style="text-align: center;">업데이트 완료</h4>
+                                    <p id="description" style="text-align: center;">선택하신 설정에 따라 업데이트가 완료되었습니다.<br />아래 버튼을 눌러 프로그램 이용을 계속하세요.</p>
+                                    <br />
+                                    <div class="row">
+                                        <div class="col s1"></div>
+                                        <div class="col s10">
+                                            <table>
+                                                <thead>
+                                                    <tr>
+                                                        <th>선택</th>
+                                                        <th>프로그램명</th>
+                                                        <th>현재 / 최신</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody id="main_chart">
+                                                    <tr>
+                                                        <td style="word-break: keep-all;">테스트데이터</td>
+                                                        <td class="grey-text" style="word-break: keep-all;">짜잔!</td>
+                                                        <td class="red-text" style="word-break: keep-all;">놀랍게도</td>
+                                                        <td class="green-text" style="word-break: keep-all;">테스트 데이터</td>
+                                                        <td class="cyan-text" style="word-break: keep-all;">입니다</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-action">
+                                    <a class="btn waves-effect waves-teal btn-flat red-text white left modal-trigger" href="javascript:void(0);" data-target="exit_q">종료</a>
+                                    <a class="btn waves-effect waves-teal btn-flat cyan-text white right" href="1_select.html">메인으로 ></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Main div E -->
+
+        <!-- Modal Structure S -->
+        <div id="exit_q" class="modal">
+            <div class="modal-content">
+                <h4>확인</h4>
+                <p>Adobe Discord RPC Configurator를 종료할까요?</p>
+            </div>
+            <div class="modal-footer">
+                <a href="javascript:void(0);" class="waves-effect waves-green btn-flat red-text" onclick="closeWindow()">프로그램 종료</a>
+                <a href="javascript:void(0);" class="modal-close waves-effect waves-green btn-flat cyan-text">화면으로 돌아가기</a>
+            </div>
+        </div>
+        <!-- Modal Structure E -->
+
+    </body>
+</html>

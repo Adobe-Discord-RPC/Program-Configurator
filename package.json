@@ -1,0 +1,43 @@
+{
+  "name": "adobe-discord-rpc_configurator",
+  "version": "1.0.0-pre1",
+  "description": "Adobe Discord RPC Program Configurator",
+  "main": "src/app.js",
+  "scripts": {
+    "update-dependencies": "chcp 65001 && npx ncu -u && npm i -D --save",
+    "rebuild": "chcp 65001 && electron-rebuild -f",
+    "build": "chcp 65001 && node package.js",
+    "start": "chcp 65001 && electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Adobe-Discord-RPC/Program-Configurator.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Adobe-Discord-RPC/Program-Configurator/issues"
+  },
+  "homepage": "https://adobe.discordrpc.org",
+  "dependencies": {
+    "7zip-bin": "^5.1.1",
+    "check-internet-connected": "^2.0.5",
+    "colors": "^1.4.0",
+    "find-process": "^1.4.4",
+    "moment": "^2.29.1",
+    "node-7z": "^2.1.2",
+    "open": "^8.0.8",
+    "powershell": "^2.3.2",
+    "random-int": "^2.0.1",
+    "regedit": "^3.0.3",
+    "request": "^2.88.2",
+    "socket.io-client": "^4.0.2",
+    "waait": "^1.0.5"
+  },
+  "devDependencies": {
+    "electron": "^12.0.7",
+    "electron-packager": "^15.2.0",
+    "electron-rebuild": "^2.3.5",
+    "electron-winstaller": "^5.0.0"
+  },
+  "author": "Adobe Discord RPC Team",
+  "license": "GPL-3.0"
+}

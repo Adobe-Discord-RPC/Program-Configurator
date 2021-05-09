@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8">
+    <title>메인 - Adobe Discord RPC Configurator</title>
+    <!-- Google Icon Font
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">-->
+    <!-- main.css -->
+    <link type="text/css" rel="stylesheet" href="./../materialize.min.css"  media="screen,projection"/>
+    <!-- Drag Block -->
+    <style>
+      body {
+        -ms-user-select: none;
+        -moz-user-select: -moz-none;
+        -khtml-user-select: none;
+        -webkit-user-select: none;
+        user-select: none;
+      }
+    </style>
+    <!-- Insert this line above script imports -->
+    <script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
+    <script type="text/javascript" src="./../jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="./../materialize.min.js"></script>
+    <script type="text/javascript" src="./../duplicate.js"></script>
+    <!-- Insert this line after script imports -->
+    <script>if (window.module) module = window.module;</script>
+  </head>
+
+  <body class="indigo lighten-4">
+    <!-- Main div S -->
+    <div class="container">
+      <div class="row">
+        <div style="position:absolute; top:50%; left:50%; transform:translate(-50%, -50%)">
+          <div class="col s3"></div>
+          <div class="col s12">
+            <div class="card horizontal">
+              <div class="card-stacked">
+                <div class="card-content">
+                  <!--<p id="title" style="text-align: center;">
+                    원하시는 항목을 선택하세요.
+                  </p>
+
+                  <br /><br />-->
+
+                  <div class="row">
+                    <div class="col s6">
+                      <div class="card hoverable">
+                        <div class="card-content">
+                          <span class="card-title">프로그램 설정</span>
+                          <p style="word-break: keep-all;">다양한 설정으로 Adobe Discord RPC를 더욱 편리하게 사용할 수 있습니다.</p>
+                        </div>
+                        <div class="card-action">
+                          <a class="orange-text lighten-2" href="2-1_configurating.html">프로그램 설정하기 ></a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col s6">
+                      <div class="card hoverable">
+                        <div class="card-content">
+                          <span class="card-title">프로그램 업데이트</span>
+                          <p style="word-break: keep-all;">Adobe Discord RPC를 최신 버전으로 업데이트 하여 더욱 다양한 기능을 누리세요.</p>
+                        </div>
+                        <div class="card-action">
+                          <!--<a class="blue-text lighten-2" href="3-2_update_collected.html">업데이트 확인하기 ></a>-->
+                          <a class="grey-text lighten-2" href="javascript:void(0);">< 공사중 ></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row" style="margin-bottom: auto;"> <!-- 이 style은 맨 마지막 row에만 사용!!!! -->
+                    <div class="col s6">
+                      <div class="card hoverable">
+                        <div class="card-content">
+                          <span class="card-title">프로그램 삭제</span>
+                          <p style="word-break: keep-all;">더 이상 프로그램을 사용하지 않을 건가요?<br />프로그램을 삭제 할 수 있습니다.</p>
+                        </div>
+                        <div class="card-action">
+                          <!--<a class="red-text lighten-1" href="4-1_check.html">프로그램 삭제하기 ></a>-->
+                          <a class="grey-text lighten-2" href="javascript:void(0);">< 공사중 ></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-action">
+                  <a id="cancel-text" class="btn waves-effect waves-teal btn-flat red-text white left modal-trigger" href="javascript:void(0);" data-target="exit_q">
+                    종료
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Main div E -->
+
+    <!-- Modal Structure S -->
+    <div id="linkOpened" class="modal">
+      <div class="modal-content">
+        <h4>브라우저를 확인하세요!</h4>
+        <p>기본 브라우저로 링크가 열렸습니다.</p>
+        <p style="word-break: keep-all;">브라우저가 열리지 않았다면, <a id="linkOpenHref" href="javascript:void(0);" onClick="openLink('undefined');">여기</a>를 클릭하시거나 아래의 링크를 복사하세요.</p>
+        <p>필요하실 경우, <a href="javascript:void(0);" onClick="openLink('https://discord.gg/7MBYbERafX', false);">공식 서버</a>를 찾아주세요.</p>
+        <p class="tooltipped" data-position="bottom" data-tooltip="Ctrl + C를 눌러 복사할 수 있습니다."><input id="linkOpenURL" value="에러: 잘못된 접근이거나, 연결되는 링크가 없을 수도 있습니다." type="text" class="validate" readonly></p>
+      </div>
+      <div class="modal-footer">
+        <a class="btn modal-close waves-effect waves-teal btn-flat blue-text white right modal-trigger" href="javascript:void(0);">
+          닫기
+        </a>
+      </div>
+    </div>
+
+    <div id="linkNF" class="modal">
+      <div class="modal-content">
+        <h4>에러!</h4>
+        <p>제공된 입력값이 없습니다!<br />잘못된 접근이거나, 연결되는 링크가 없을 수도 있습니다.</p>
+        <p>필요하실 경우, <a href="javascript:void(0);" onClick="openLink('https://discord.gg/7MBYbERafX', false);">공식 서버</a>를 찾아주세요.</p>
+      </div>
+      <div class="modal-footer">
+        <a class="btn modal-close waves-effect waves-teal btn-flat blue-text white right modal-trigger" href="javascript:void(0);">
+          닫기
+        </a>
+      </div>
+    </div>
+
+    <div id="exit_q" class="modal">
+      <div class="modal-content">
+        <h4>확인</h4>
+        <p>Adobe Discord RPC Configurator를 종료할까요?</p>
+      </div>
+      <div class="modal-footer">
+        <a href="javascript:void(0);" class="waves-effect waves-green btn-flat red-text" onclick="closeWindow()">프로그램 종료</a>
+        <a href="javascript:void(0);" class="modal-close waves-effect waves-green btn-flat cyan-text">화면으로 돌아가기</a>
+      </div>
+    </div>
+    <!-- Modal Structure E -->
+
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $('.modal').modal();
+      });
+    </script>
+
+  </body>
+</html>

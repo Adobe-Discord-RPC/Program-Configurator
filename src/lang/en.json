@@ -1,0 +1,106 @@
+{
+  "appjs": {
+    "tray": {
+      "version": "version",
+      "homepage": "Homepage",
+      "discord": "Official Discord",
+      "programConfig": "Program Settings",
+      "checkUpdate": "Check for updates (Disabled)",
+      "programDelete": "Program Remove (Disabled)",
+      "exit": "Exit Program",
+      "disabled": [
+        "Some menus have been",
+        "temporarily disabled."
+      ]
+    },
+    "getLogsSize": {
+      "description": {
+        "installer": "Program Installer Logs",
+        "monitor": "Program Monitor Logs",
+        "sysInf": "System Information Logs",
+        "core": "Program Core Logs",
+        "configurator": "Program Configurator Logs",
+        "unknown": "Other Logs"
+      }
+    },
+    "getUpdates": {
+      "notify": {
+        "updateCheckFailed": {
+          "title": "Update check failed",
+          "body": "Failed to retrieve data from the server.\nPlease check Your internet connection."
+        },
+        "unableAutoUpdate": {
+          "title": "Unable to update automatically",
+          "body": "The version cannot be updated automatically.\nPlease refer to the guide and update the program manually."
+        }
+      }
+    },
+    "runUpdate": {
+      "notify": {
+        "connectFailed": {
+          "title": "Server connection failed",
+          "body": "Failed to connect to server.\nPlease check Your internet connection."
+        },
+        "monitorKillFailed": {
+          "title": "Program shutdown failed.",
+          "body": "Please exit the program manually and try to update again.\nPlease let us know if this problem persists."
+        },
+        "programDownloadFailed": {
+          "title": "Program download failed.",
+          "body": "Please let us know if this problem persists."
+        },
+        "fileChecksumNotEqual": {
+          "title": "Program validate check failed.",
+          "body": "Please let us know if this problem persists."
+        },
+        "fileUnpackFailed": {
+          "title": "Program decompression failed.",
+          "body": "Please let us know if this problem persists."
+        }
+      },
+      "prListDisplayName": {
+        "Core": "Program Core",
+        "Monitor": "Program Monitor",
+        "Info": "Supporting Program Lists",
+        "Configurator": "Program Configurator",
+        "Controller": "Program Controller"
+      },
+      "logMessage": {
+        "checkConnection": {
+          "checking": "Checking server connection.",
+          "checkingFailed": "Connection to server failed.\nPlease check Your internet connection again.\nPlease let us know if this problem persists : https://discord.gg/7MBYbERafX",
+          "connected": "Successfully connected to the server.\nDon't disconnect the Internet during the update."
+        },
+        "loadInfo": {
+          "loading": "Retrieving update information...",
+          "loaded": "Update information has been retrieved.."
+        },
+        "checkRunning": {
+          "checking": "Checking to see if the program is running...",
+          "running": "The program is running.\nAttempt to exit the program.",
+          "killSucceed": "Program terminated normally.\n\nDo not run the program again manually.\nIt will automatically rerun immediately after the update is complete.",
+          "killFailed": "Program shutdown failed.\nPlease exit the program manually and try to update again.\nPlease let us know if this problem persists : https://discord.gg/7MBYbERafX",
+          "notRunning": "The program is not running."
+        },
+        "folerInit": {
+          "start": "Initializing temporary folder...",
+          "succeed": "The temporary folder was successfully initialized."
+        },
+        "fileDownload": {
+          "start": "Start downloading %DISPLAYNAME%.",
+          "failed": "There was a problem downloading.\nPlease let us know if this problem persists : https://discord.gg/7MBYbERafX",
+          "succeed": "%DISPLAYNAME% download is complete."
+        },
+        "fileValidate": {
+          "failed": "Validate check failed.\nPlease let us know if this problem persists : https://discord.gg/7MBYbERafX",
+          "succeed": "Validate check is complete."
+        },
+        "fileUnpack": {
+          "start": "Extracting downloaded files to temporary folder.\nIt takes about 1 to 10 minutes depending on your PC specification.",
+          "failed": "Extracting failed.\nPlease let us know if this problem persists : https://discord.gg/7MBYbERafX",
+          "succeed": "Successfully unloaded files to temporary folder."
+        }
+      }
+    }
+  }
+}

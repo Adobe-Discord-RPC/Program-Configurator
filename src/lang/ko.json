@@ -1,0 +1,106 @@
+{
+  "appjs": {
+    "tray": {
+      "version": "버전",
+      "homepage": "홈페이지",
+      "discord": "공식 디스코드",
+      "programConfig": "프로그램 설정",
+      "checkUpdate": "업데이트 확인 (공사중)",
+      "programDelete": "프로그램 제거 (공사중)",
+      "exit": "프로그램 종료",
+      "disabled": ["일부 메뉴가 일시적으로", "비활성화 되었습니다."]
+    },
+    "getLogsSize": {
+      "description": {
+        "installer": "프로그램 설치 로그파일",
+        "monitor": "프로그램 실행 모니터 로그파일",
+        "sysInf": "시스템 정보 로그파일",
+        "core": "프로그램 코어 로그파일",
+        "configurator": "프로그램 설정&업데이터 로그파일",
+        "unknown": "기타 로그파일"
+      }
+    },
+    "getUpdates": {
+      "notify": {
+        "updateCheckFailed": {
+          "title": "업데이트 확인 실패",
+          "body": "서버로부터 데이터를 불러오지 못했습니다.\n인터넷 연결을 확인 해 주세요."
+        },
+        "unableAutoUpdate": {
+          "title": "자동 업데이트 불가",
+          "body": "자동으로 업데이트 할 수 없는 버전입니다.\n가이드를 참고해서 프로그램을 수동으로 업데이트 해 주세요."
+        }
+      }
+    },
+    "runUpdate": {
+      "notify": {
+        "connectFailed": {
+          "title": "서버 연결 실패",
+          "body": "서버에 연결하지 못했습니다.\n인터넷 연결을 확인 해 주세요."
+        },
+        "monitorKillFailed": {
+          "title": "프로그램 종료에 실패했습니다.",
+          "body": "프로그램을 수동으로 종료한 뒤, 다시 업데이트를 시도 해 주세요.\n이 문제가 지속되면 공식 서버에 알려주세요."
+        },
+        "programDownloadFailed": {
+          "title": "프로그램 다운로드에 실패했습니다.",
+          "body": "이 문제가 지속되면 공식 서버에 알려주세요."
+        },
+        "fileChecksumNotEqual": {
+          "title": "프로그램 무결성 검사에 실패했습니다.",
+          "body": "이 문제가 지속되면 공식 서버에 알려주세요."
+        },
+        "fileUnpackFailed": {
+          "title": "프로그램 압축 풀기에 실패했습니다.",
+          "body": "이 문제가 지속되면 공식 서버에 알려주세요."
+        }
+      },
+      "prListDisplayName": {
+        "Core": "프로그램 코어",
+        "Monitor": "프로그램 모니터",
+        "Info": "지원 프로그램 목록",
+        "Configurator": "프로그램 Configurator",
+        "Controller": "프로그램 컨트롤러"
+      },
+      "logMessage": {
+        "checkConnection": {
+          "checking": "서버 연결을 확인하고 있습니다.",
+          "checkingFailed": "서버와의 연결에 실패했습니다.\n인터넷 연결을 다시 한번 확인 해 주세요.\n이 문제가 지속되면 공식 서버에 알려주세요 : https://discord.gg/7MBYbERafX",
+          "connected": "서버에 연결되었습니다.\n업데이트 도중 인터넷 연결을 끊지 마세요."
+        },
+        "loadInfo": {
+          "loading": "업데이트 정보를 다시 불러오는 중 입니다...",
+          "loaded": "업데이트 정보를 불러왔습니다."
+        },
+        "checkRunning": {
+          "checking": "프로그램 실행 여부를 확인하고 있습니다...",
+          "running": "프로그램이 실행 중입니다.\n프로그램 종료를 시도합니다.",
+          "killSucceed": "프로그램을 정상적으로 종료했습니다.\n\n프로그램을 수동으로 다시 실행하지 마세요.\n업데이트 완료 직후 자동으로 다시 실행됩니다.",
+          "killFailed": "프로그램 종료에 실패했습니다.\n프로그램을 수동으로 종료한 뒤, 다시 업데이트를 시도 해 주세요.\n이 문제가 지속되면 공식 서버에 알려주세요 : https://discord.gg/7MBYbERafX",
+          "notRunning": "프로그램이 실행 중이지 않습니다."
+        },
+        "folerInit": {
+          "start": "임시 폴더를 초기화 하고 있습니다...",
+          "succeed": "성공적으로 임시 폴더를 초기화 했습니다."
+        },
+        "fileDownload": {
+          "start": "%DISPLAYNAME% 다운로드를 시작합니다.",
+          "failed": "다운로드 도중 문제가 발생했습니다.\n이 문제가 지속되면 공식 서버에 알려주세요 : https://discord.gg/7MBYbERafX",
+          "succeed": "%DISPLAYNAME% 다운로드가 완료되었습니다."
+        },
+        "fileValidate": {
+          "failed": "무결성 검사에 실패했습니다.\n이 문제가 지속되면 공식 서버에 알려주세요 : https://discord.gg/7MBYbERafX",
+          "succeed": "무결성 검사가 완료되었습니다."
+        },
+        "fileUnpack": {
+          "start": "임시 폴더에 다운받은 파일을 풀고 있습니다.\nPC 사양에 따라 1분에서 10분 정도 소요됩니다.",
+          "failed": "압축 풀기에 실패했습니다.\n이 문제가 지속되면 공식 서버에 알려주세요 : https://discord.gg/7MBYbERafX",
+          "succeed": "성공적으로 임시 폴더에 다운받은 파일을 풀었습니다."
+        },
+        "fileMove": {
+          "start": "파일을 옮기고 있습니다.\n잠시만 기다려 주세요."
+        }
+      }
+    }
+  }
+}

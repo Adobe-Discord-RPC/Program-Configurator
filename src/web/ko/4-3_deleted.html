@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+    <head>
+        <meta charset="UTF-8">
+        <title>Adobe Discord RPC Configurator</title>
+        <!-- Google Icon Font
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">-->
+        <!-- main.css -->
+        <link type="text/css" rel="stylesheet" href="./../materialize.min.css"  media="screen,projection"/>
+        <!-- Drag Block -->
+        <style>
+            body {
+                -ms-user-select: none;
+                -moz-user-select: -moz-none;
+                -khtml-user-select: none;
+                -webkit-user-select: none;
+                user-select: none;
+            }
+        </style>
+    </head>
+
+    <body class="indigo lighten-4">
+        <!-- Main div S -->
+        <div class="container">
+            <div class="row">
+                <div style="position:absolute; top:50%; left:50%; transform:translate(-50%, -50%)">
+                    <div class="col s3"></div>
+                    <div class="col s12">
+                        <div class="card horizontal">
+                            <div class="card-image">
+                                <img src="./images/welcome.png">
+                            </div>
+                            <div class="card-stacked">
+                                <div class="card-content">
+                                    <h4 style="text-align: left; word-break: keep-all;">프로그램 제거 완료</h4>
+                                    <p style="text-align: left; word-break: keep-all;">Adobe Discord RPC를 사용 해 주셔서 감사합니다.<br />일부 파일은 직접 제거 해야 할 수도 있습니다.</p>
+                                    <br /><br />
+                                    <p>
+                                        <label>
+                                            <input type="checkbox" />
+                                            <span>프로그램 폴더 열기</span>
+                                        </label>
+                                    </p>
+                                </div>
+                                <div class="card-action">
+                                    <a class="btn waves-effect waves-teal btn-flat cyan-text white right" href="javascript:void(0);" OnClick="closeWindow();">프로그램 종료</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Main div E -->
+
+        <!-- JS -->
+        <!-- Insert this line above script imports -->
+        <script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
+        <script type="text/javascript" src="./../jquery-2.1.1.min.js"></script>
+        <script type="text/javascript" src="./../materialize.min.js"></script>
+        <!-- Insert this line after script imports -->
+        <script>if (window.module) module = window.module;</script>
+
+        <!-- Custom Script -->
+        <script type="text/javascript">
+            function closeWindow() {
+
+            }
+            $('.modal').modal();
+        </script>
+    </body>
+</html>
